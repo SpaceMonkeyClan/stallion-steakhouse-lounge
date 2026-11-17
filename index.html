@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Stallion Steakhouse and Lounge | Yucca Valley, CA</title>
+<meta name="description" content="Classic style steakhouse with a late night live lounge, set in a ranch house desert vibe. 56193 29 Palms Hwy, Yucca Valley, CA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Barlow+Condensed:wght@500;600&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#15100c; --char:#1e1712; --hide:#2a2019;
+    --bone:#efe6d6; --dust:#b9a98f; --brass:#c9a25a; --ox:#8a251d; --ember:#d9662b;
+    --display:"Bodoni Moda", Georgia, serif;
+    --label:"Barlow Condensed", "Arial Narrow", sans-serif;
+    --body:"Barlow", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--night);color:var(--bone);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:72px}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .label{font-family:var(--label);text-transform:uppercase;letter-spacing:.22em;font-size:.82rem;color:var(--brass)}
+  h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.05}
+  h2{font-size:clamp(2.1rem,7vw,3.4rem);margin:.35em 0 .5em}
+  h2 em{font-style:italic;color:var(--brass)}
+  p{color:#d8cdb9}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:20;background:rgba(21,16,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid #3a2c20}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--label);letter-spacing:.2em;text-transform:uppercase;font-size:1rem}
+  .brand svg{width:26px;height:26px}
+  nav{display:none;gap:28px}
+  nav a{font-family:var(--label);text-transform:uppercase;letter-spacing:.18em;font-size:.85rem;text-decoration:none;color:var(--dust)}
+  nav a:hover{color:var(--bone)}
+
+  /* hero */
+  .hero{position:relative;min-height:86vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:linear-gradient(180deg,#1b120d 0%,#3a1a12 38%,#8a3a1c 62%,#d9662b 78%,#e9a04a 88%)}
+  .hero svg.scene{position:absolute;inset:auto 0 0 0;width:100%;height:auto;display:block}
+  .sun{position:absolute;left:74%;bottom:12%;width:min(70vw,460px);aspect-ratio:1;border-radius:50%;margin-left:calc(min(70vw,460px) / -2);
+    background:radial-gradient(circle,#f8cf78 0%,#ec9a40 52%,rgba(233,145,58,0) 72%);animation:breathe 7s ease-in-out infinite;will-change:transform}
+  @keyframes breathe{0%,100%{filter:brightness(1);scale:1}50%{filter:brightness(1.12);scale:1.05}}
+  .stars{position:absolute;inset:0 0 45% 0;pointer-events:none}
+  .stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#f3e3c2;opacity:.2;animation:twinkle 4s ease-in-out infinite}
+  @keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.95}}
+  .win rect{animation:flicker 5s steps(1) infinite}
+  .win rect:nth-child(2){animation-delay:-1.7s}.win rect:nth-child(3){animation-delay:-3.1s}
+  @keyframes flicker{0%,100%{opacity:1}46%{opacity:1}48%{opacity:.55}50%{opacity:1}80%{opacity:.8}82%{opacity:1}}
+  .rise{opacity:0;transform:translateY(18px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+  .rise:nth-child(2){animation-delay:.12s}.rise:nth-child(3){animation-delay:.24s}.rise:nth-child(4){animation-delay:.36s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .snipe{position:absolute;z-index:3;top:26px;right:-6px;width:118px;height:118px;border-radius:50%;background:var(--brass);color:var(--night);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(12deg);
+    box-shadow:0 0 0 4px var(--brass),0 0 0 5px var(--night),0 0 0 7px var(--brass),0 10px 30px rgba(0,0,0,.45);animation:stamp .6s .7s cubic-bezier(.3,1.6,.5,1) backwards}
+  .snipe small{font-family:var(--label);text-transform:uppercase;letter-spacing:.2em;font-size:.68rem;font-weight:600}
+  .snipe b{font-family:var(--display);font-style:italic;font-weight:700;font-size:1.55rem;line-height:1}
+  @keyframes stamp{from{opacity:0;transform:rotate(-8deg) scale(1.8)}}
+  .pill{font-family:var(--label);text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--night);background:var(--brass);padding:5px 10px}
+  .list{background:var(--ox);text-align:center}
+  .list .label{color:#f1d9a6}.list p{color:#f3e2cf;max-width:44ch;margin:0 auto}
+  .list form{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
+  .list input{flex:1 1 230px;max-width:340px;padding:14px 16px;font:inherit;color:var(--bone);background:rgba(21,16,12,.35);border:1px solid #e7c9b0}
+  .list input::placeholder{color:#e2c3ad}
+  .list button{font-family:var(--label);text-transform:uppercase;letter-spacing:.18em;font-size:.9rem;padding:14px 22px;background:var(--bone);color:var(--night);border:1px solid var(--bone);cursor:pointer}
+  .list .msg{margin-top:16px;min-height:1.6em;font-size:.95rem}
+  @media (min-width:820px){.snipe{top:40px;right:6%;width:150px;height:150px}.snipe b{font-size:2rem}.pill{display:none}}
+  @media (prefers-reduced-motion:reduce){.sun,.stars i,.win rect,.snipe{animation:none}.rise{animation:none;opacity:1;transform:none}}
+  .hero .wrap{position:relative;z-index:2;width:100%;padding-top:90px;padding-bottom:64px}
+  .hero h1{font-size:clamp(3.4rem,15vw,8rem);letter-spacing:-.01em;text-shadow:0 2px 30px rgba(21,16,12,.55)}
+  .hero h1 span{display:block;font-style:italic;font-size:.42em;color:var(--bone);margin-top:.15em}
+  .hero p.lede{max-width:30ch;margin:18px 0 26px;color:var(--bone);font-size:1.12rem;text-shadow:0 1px 14px rgba(21,16,12,.7)}
+  .btns{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-block;font-family:var(--label);text-transform:uppercase;letter-spacing:.18em;font-size:.9rem;text-decoration:none;padding:14px 22px;border:1px solid var(--bone);color:var(--bone)}
+  .btn.solid{background:var(--ox);border-color:var(--ox)}
+  .btn:hover{background:var(--bone);color:var(--night);border-color:var(--bone)}
+
+  section{padding:76px 0}
+  .rule{height:1px;background:linear-gradient(90deg,transparent,var(--brass),transparent);opacity:.5}
+
+  /* house */
+  .house{display:grid;gap:34px}
+  .house p+p{margin-top:1em}
+  .stamp{border:1px solid #4a382a;padding:26px;background:var(--char)}
+  .stamp h3{font-size:1.5rem;margin:.3em 0 .4em}
+
+  /* menu */
+  .menu{background:var(--char)}
+  .cards{display:grid;gap:1px;background:#3a2c20;border:1px solid #3a2c20;margin-top:26px}
+  .card{background:var(--char);padding:26px 22px}
+  .card .n{font-family:var(--display);font-style:italic;color:var(--brass);font-size:1.1rem}
+  .card h3{font-size:1.7rem;margin:.2em 0 .35em}
+  .note{margin-top:22px;font-size:.95rem;color:var(--dust)}
+
+  /* lounge */
+  .lounge{background:radial-gradient(120% 90% at 80% 0%,#4a1712 0%,var(--night) 60%)}
+  .facts{list-style:none;margin-top:26px;border-top:1px solid #4a382a}
+  .facts li{display:flex;justify-content:space-between;gap:18px;padding:16px 0;border-bottom:1px solid #4a382a}
+  .facts b{font-family:var(--label);font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:.88rem;color:var(--brass);white-space:nowrap}
+  .facts span{text-align:right;color:#d8cdb9}
+
+  /* visit */
+  .visit{display:grid;gap:34px}
+  table{width:100%;border-collapse:collapse}
+  td{padding:11px 0;border-bottom:1px solid #3a2c20}
+  td:last-child{text-align:right;color:#d8cdb9}
+  .tbd{color:var(--dust);font-style:italic}
+  address{font-style:normal;font-family:var(--display);font-size:1.6rem;line-height:1.25;margin:.3em 0 .8em}
+
+  footer{border-top:1px solid #3a2c20;padding:34px 0;color:var(--dust);font-size:.9rem}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
+
+  /* mobile action bar */
+  .dock{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:1fr 1fr;background:var(--night);border-top:1px solid #4a382a}
+  .dock a{font-family:var(--label);text-transform:uppercase;letter-spacing:.18em;font-size:.9rem;text-decoration:none;text-align:center;padding:18px 8px}
+  .dock a+a{background:var(--ox)}
+
+  :focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+  @media (min-width:820px){
+    body{padding-bottom:0}
+    nav{display:flex}
+    .dock{display:none}
+    .house{grid-template-columns:1.3fr 1fr;align-items:start;gap:60px}
+    .cards{grid-template-columns:repeat(3,1fr)}
+    .visit{grid-template-columns:1fr 1fr;gap:70px}
+    section{padding:110px 0}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="The Stallion, home">
+      <svg viewBox="0 0 32 32" fill="none" stroke="#c9a25a" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+        <path d="M8 27V15a8 8 0 0 1 16 0v12"/><path d="M5 27h6M21 27h6"/>
+      </svg>
+      The Stallion
+    </a>
+    <span class="pill">Coming soon</span>
+    <nav aria-label="Main">
+      <a href="#house">The House</a>
+      <a href="#menu">Menu</a>
+      <a href="#lounge">Lounge</a>
+      <a href="#visit">Visit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="stars" aria-hidden="true"></div>
+    <div class="sun" aria-hidden="true"></div>
+    <div class="snipe" role="note"><small>Doors</small><b>Coming<br>Soon</b><small>Yucca Valley</small></div>
+    <svg class="scene" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <path class="far" fill="#5a2415" d="M0 190 L140 150 L260 175 L420 120 L560 165 L720 130 L880 170 L1040 135 L1200 165 V300 H0Z"/>
+      <path fill="#2a140d" d="M0 235 L180 210 L360 228 L520 205 L700 226 L900 208 L1200 230 V300 H0Z"/>
+      <g fill="#15100c">
+        <path d="M0 262 H1200 V300 H0Z"/>
+        <path d="M470 262 V232 L600 206 L730 232 V262Z"/>
+        <rect x="690" y="204" width="14" height="30"/>
+        <path d="M250 262 v-58 h8 v22 h12 v-14 h7 v22 h-19 v28z"/>
+        <path d="M930 262 v-70 h9 v30 h13 v-18 h7 v26 h-20 v32z"/>
+      </g>
+      <g class="win" fill="#e9a04a"><rect x="520" y="240" width="16" height="12"/><rect x="590" y="240" width="16" height="12"/><rect x="660" y="240" width="16" height="12"/></g>
+    </svg>
+    <div class="wrap">
+      <div class="label rise">Yucca Valley, California</div>
+      <h1 class="rise">The Stallion<span>Steakhouse and Lounge</span></h1>
+      <p class="lede rise">Classic style steakhouse with a late night live lounge, set in a ranch house desert vibe.</p>
+      <div class="btns rise">
+        <a class="btn solid" href="#list">Get opening news</a>
+        <a class="btn" href="#menu">See the menu</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="house">
+    <div class="wrap house">
+      <div>
+        <div class="label">The House</div>
+        <h2>Dinner first. <em>Then stay a while.</em></h2>
+        <p>The Stallion is two rooms under one ranch house roof on the 29 Palms Highway. Up front, a classic steakhouse: a proper dinner, an honest pour, a table you can settle into.</p>
+        <p>Past the dining room, the lounge runs late with live music. Come for the steak and head home, or come for the band and never see a menu. Most nights, people end up doing both.</p>
+      </div>
+      <div class="stamp">
+        <div class="label">On the highway</div>
+        <h3>Minutes from Joshua Tree</h3>
+        <p>Right on Highway 62 in Yucca Valley, on the way to Pioneertown, Joshua Tree and the national park.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section id="menu" class="menu">
+    <div class="wrap">
+      <div class="label">The Menu</div>
+      <h2>Steakhouse <em>classics</em></h2>
+      <p style="max-width:52ch">A short tour of the kitchen and bar. The full, current menu lives on our menu page.</p>
+      <div class="cards">
+        <div class="card"><div class="n">i.</div><h3>From the grill</h3><p>Steaks and chops, cooked the way you order them, with the sides a steakhouse dinner calls for.</p></div>
+        <div class="card"><div class="n">ii.</div><h3>For the table</h3><p>Starters and salads to share while the first round arrives.</p></div>
+        <div class="card"><div class="n">iii.</div><h3>From the bar</h3><p>Classic cocktails, wine and cold beer, served in the dining room and all night in the lounge.</p></div>
+      </div>
+      <p class="note"><a href="https://stallionsteakhouse.com">View the current menu →</a></p>
+    </div>
+  </section>
+
+  <section id="lounge" class="lounge">
+    <div class="wrap">
+      <div class="label">The Lounge</div>
+      <h2>Live, <em>late.</em></h2>
+      <p style="max-width:52ch">When dinner winds down, the lounge picks up. Touring acts and high desert regulars share the stage, and the bar stays busy until the last set.</p>
+      <ul class="facts">
+        <li><b>Shows</b><span>A mix of free nights and ticketed shows</span></li>
+        <li><b>Doors</b><span>Evenings, time varies by show</span></li>
+        <li><b>Tickets</b><span>Advance and day-of pricing on ticketed nights</span></li>
+      </ul>
+      <p class="note"><a href="https://stallionsteakhouse.com">See what's on →</a></p>
+    </div>
+  </section>
+
+  <section id="list" class="list">
+    <div class="wrap">
+      <div class="label">Opening soon</div>
+      <h2>Be first through the doors</h2>
+      <p>Leave your email and we'll send the opening date, first show announcements and an invite to opening week.</p>
+      <form id="signup" novalidate>
+        <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
+        <button type="submit">Notify me</button>
+      </form>
+      <p class="msg" id="msg" role="status"></p>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="wrap visit">
+      <div>
+        <div class="label">Find us</div>
+        <address>56193 29 Palms Hwy<br>Yucca Valley, CA 92284</address>
+        <div class="btns">
+          <a class="btn solid" href="https://www.google.com/maps/search/?api=1&query=The+Stallion+Steakhouse+and+Lounge+56193+29+Palms+Hwy+Yucca+Valley+CA+92284">Get directions</a>
+        </div>
+      </div>
+      <div>
+        <div class="label">Hours</div>
+        <table>
+          <tr><td>Dinner</td><td class="tbd">Announced at opening</td></tr>
+          <tr><td>Lounge</td><td class="tbd">Late on show nights</td></tr>
+        </table>
+        <p class="note"><a href="#list">Get the opening date by email →</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>The Stallion Steakhouse and Lounge</span>
+    <span>56193 29 Palms Hwy, Yucca Valley, CA 92284</span>
+  </div>
+</footer>
+
+<div class="dock">
+  <a href="#list">Get updates</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=The+Stallion+Steakhouse+and+Lounge+56193+29+Palms+Hwy+Yucca+Valley+CA+92284">Directions</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"The Stallion Steakhouse and Lounge","servesCuisine":"Steakhouse","url":"https://stallionsteakhouse.com",
+"address":{"@type":"PostalAddress","streetAddress":"56193 29 Palms Hwy","addressLocality":"Yucca Valley","addressRegion":"CA","postalCode":"92284","addressCountry":"US"}}
+</script>
+<script>
+(function(){
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var stars = document.querySelector('.stars');
+  for (var i=0;i<46;i++){
+    var s=document.createElement('i');
+    s.style.left=(Math.random()*100)+'%'; s.style.top=(Math.random()*100)+'%';
+    s.style.animationDelay=(-Math.random()*4)+'s'; s.style.animationDuration=(3+Math.random()*4)+'s';
+    if(Math.random()>.8){s.style.width=s.style.height='3px'}
+    stars.appendChild(s);
+  }
+  if(!still){
+    var sun=document.querySelector('.sun'), far=document.querySelector('.far'), tick=false;
+    addEventListener('scroll',function(){
+      if(tick) return; tick=true;
+      requestAnimationFrame(function(){
+        var y=Math.min(scrollY,900);
+        sun.style.transform='translateY('+(y*0.28)+'px)';   /* sun sets as you scroll */
+        far.style.transform='translateY('+(y*0.04)+'px)';
+        stars.style.opacity=Math.min(1,.55+y/500);
+        tick=false;
+      });
+    },{passive:true});
+  }
+  /* DEMO ONLY: nothing is sent. Point this form at the Mailchimp audience before launch. */
+  var f=document.getElementById('signup'), m=document.getElementById('msg');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=f.email.value.trim();
+    m.textContent = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v) ? 'Demo: signup captured here once the mailing list is connected.' : 'Enter a valid email address.';
+  });
+})();
+</script>
+</body>
+</html>
